@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This document identifies the properties of a study and keeps track of all users and user data -->
+<study
+ xmlns:xsi="http://www.ryarmst.com/surgsimschema"
+ xsi:noNamespaceSchemaLocation="user.xsd">
+	<!-- The study name is a string -->
+	<studyname>Some Study</studyname>
+	<!-- The study ID is a numeric assignment to identify the study -->
+	<studyID>12</studyID>
+	<!-- Start date -->
+	<startdate>22/03/2016</startdate>
+	<!-- The expected number of users for the study -->
+	<expectedusernumber>30</expectedusernumber>
+	<!-- The number of users run through so far -->
+	<currentusernumber>2</currentusernumber>
+	<!-- How many unique cases are there? -->
+	<numberofcases>5</numberofcases>
+	<!-- Case orders -->
+	<caseorder id="c1" category="slice-based">1, 2, 3, 4, 5</caseorder>
+	<caseorder id="c2" category="slice-based">5, 4, 3, 2, 1</caseorder>
+	<caseorder id="c3" category="AR">1, 2, 3, 4, 5</caseorder>
+	<caseorder id="c4" category="AR">5, 4, 3, 2, 1</caseorder>
+ 
+	<!-- Each study arrangement is a certain order that a single user might go through cases (referencing caseorder id's) -->
+	<studyarrangement id="a1">c1, c3</studyarrangement>
+	<studyarrangement id="a2">c2, c4</studyarrangement>
+	
+	
+	<!-- All user details are added here. This will likely be added after each user completes the study. -->
+	<users>
+		<user id="u1" category="a1">
+			<!-- This is a string indicating medical experience -->
+			<experience>R3</experience>
+			<!-- This will contain assessment results, such as spatial reasoning scores in a long string -->
+			<assessments>NE</assessments>
+			<!-- A string of special information -->
+			<specialcase>NE</specialcase>
+			<!-- Contains all the user data from the simulator -->
+			<data>
+				<!-- Time will be a string of comma delimited values for each task time -->
+				<time category="slice-based">22,18,17,32, 45, 21</time>
+				<time category="AR">22,18,17,32, 45, 21</time>
+				<!-- Scores will contain all the data from the simulator. For points and vectors in 3D space, each coordinate is comma delimited and each point is separated by a semicolon -->
+				<scores category="burrholelocation-slice">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+				<scores category="trajectory-slice">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+				<scores category="burrholelocation-AR">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+				<scores category="trajectory-AR">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+			</data>
+			<!-- The analysis section will contain all data from the Matlab analysis -> entering these should be very flexible - it will probably just be added from MATLAB -->
+			<analysis>
+				<engagement category="AR">2, 3, 4, 5, 2</engagement>
+				<engagement category="slice-based">2, 3, 4, 5, 2</engagement>
+				<relativecoronalangulation category="AR">1.64, 2.32, 2.2, 2.1, 4.1</relativecoronalangulation>
+				<relativecoronalangulation category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</relativecoronalangulation>
+				<relativesagittalangulation category="AR">1.64, 2.32, 2.2, 2.1, 4.1</relativesagittalangulation>
+				<relativesagittalangulation category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</relativesagittalangulation>
+				<errormargin category="AR">1.64, 2.32, 2.2, 2.1, 4.1</errormargin>
+				<errormargin category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</errormargin>
+				<distancefromforamen category="AR">1.64, 2.32, 2.2, 2.1, 4.1</distancefromforamen>
+				<distancefromforamen category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</distancefromforamen>
+				<expertscore category="AR">2, 3, 6, 5, 1</expertscore>
+				<expertscore category="slice-based">2, 3, 6, 5, 1</expertscore>
+			</analysis>
+		</user>
+		
+		<user id="u2" category="a2">
+			<!-- This is a string indicating medical experience -->
+			<experience>R3</experience>
+			<!-- This will contain assessment results, such as spatial reasoning scores in a long string -->
+			<assessments>NE</assessments>
+			<!-- A string of special information -->
+			<specialcase>NE</specialcase>
+			<!-- Contains all the user data from the simulator -->
+			<data>
+				<!-- Time will be a string of comma delimited values for each task time -->
+				<time category="slice-based">22,18,17,32, 45, 21</time>
+				<time category="AR">22,18,17,32, 45, 21</time>
+				<!-- Scores will contain all the data from the simulator. For points and vectors in 3D space, each coordinate is comma delimited and each point is separated by a semicolon -->
+				<scores category="burrholelocation-slice">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+				<scores category="trajectory-slice">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+				<scores category="burrholelocation-AR">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+				<scores category="trajectory-AR">12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 12.12, -0.0087, 0.676; 0.98, 0.001, -2.12</scores>
+			</data>
+			<!-- The analysis section will contain all data from the Matlab analysis -->
+			<analysis>
+				<engagement category="AR">2, 3, 4, 5, 2</engagement>
+				<engagement category="slice-based">2, 3, 4, 5, 2</engagement>
+				<relativecoronalangulation category="AR">1.64, 2.32, 2.2, 2.1, 4.1</relativecoronalangulation>
+				<relativecoronalangulation category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</relativecoronalangulation>
+				<relativesagittalangulation category="AR">1.64, 2.32, 2.2, 2.1, 4.1</relativesagittalangulation>
+				<relativesagittalangulation category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</relativesagittalangulation>
+				<errormargin category="AR">1.64, 2.32, 2.2, 2.1, 4.1</errormargin>
+				<errormargin category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</errormargin>
+				<distancefromforamen category="AR">1.64, 2.32, 2.2, 2.1, 4.1</distancefromforamen>
+				<distancefromforamen category="slice-based">1.64, 2.32, 2.2, 2.1, 4.1</distancefromforamen>
+				<expertscore category="AR">2, 3, 6, 5, 1</expertscore>
+				<expertscore category="slice-based">2, 3, 6, 5, 1</expertscore>
+			</analysis>
+		</user>
+	</users>
+</study> 
